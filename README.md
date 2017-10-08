@@ -10,10 +10,10 @@
 Сам обработчик выполняющий какую то задачу - это посути консольная утилита написанная 
 на PHP, и этот же обработчик будет создавать сокет сервер и раздавать
  информацию всем сокетам подключившиеся к ниму.
- 
- ##Пример
+  
+ ## Пример
  ```bash
-    include 'asyncsocketserver.php';
+    include 'AsyncSocketWriterServer.php';
     
     //Создает сервер доступным по localhost:8083
     $socketServer = new AsyncSocketServer('localhost', 8083);
