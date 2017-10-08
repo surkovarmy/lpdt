@@ -16,7 +16,7 @@
     include 'AsyncSocketWriterServer.php';
     
     //Создает сервер доступным по localhost:8083
-    $socketServer = new AsyncSocketServer('localhost', 8083);
+    $socketServer = new AsyncSocketWriterServer('localhost', 8083);
     
     $i = 0;
     //Какая то долгая, полезная работа 
@@ -24,7 +24,7 @@
         //Проверяет новых клиентов ожидающих подключение
         $socketServer->tick();
         
-        // Отправляет всем клиентам секстовое сообщение
+        // Отправляет всем клиентам текстовое сообщение
         $socketServer->write("Текущая итерация: " . $i . "\n");
                 
         $i++;
