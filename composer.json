@@ -1,0 +1,27 @@
+{
+    "name": "prodvigaeff/asyncsocketserver",
+    "description": "Create socket server on nonblock mode",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "gbublik",
+            "email": "gbublik@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^5.4 || ^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0.8 || ^5.7.15"
+    },
+    "autoload": {
+        "psr-4": {
+            "Profvigaeff\\AsyncSocketServer\\": "src/"
+        }
+    },
+    "support": {
+        "issues": "https://github.com/gbublik/AsyncSocketServer/issues",
+        "source": "https://github.com/gbublik/AsyncSocketServer"
+    }
+}
