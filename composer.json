@@ -22,8 +22,8 @@
         }
     },
     "support": {
-        "issues": "https://github.com/gbublik/AsyncSocketServer/issues",
-        "source": "https://github.com/gbublik/AsyncSocketServer"
+        "issues": "https://github.com/gbublik/roohp/issues",
+        "source": "https://github.com/gbublik/roohp"
     },
     "scripts": {
         "check": [
