@@ -1,2 +1,1 @@
-
- 
+# Remote observer of hypertext processes

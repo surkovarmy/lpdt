@@ -1,8 +1,7 @@
 <?php
-include 'tcp/AsyncSocketServer.php';
+include 'tcp/src/AsyncSocketServer.php.php';
 
-$socketServer = new AsyncSocketServer();
-
+/*
 $i = 0;
 while (1) {
     $msg = 'Iterator: '.$i;
@@ -12,4 +11,5 @@ while (1) {
     sleep(1);
 }
 $socketServer->stopServer();
+*/
 ?>

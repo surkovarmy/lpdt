@@ -1,5 +1,5 @@
 {
-    "name": "prodvigaeff/asyncsocketserver",
+    "name": "bv/remote-monitoring-work-hypertext-preprocessors",
     "description": "Create socket server on nonblock mode",
     "type": "library",
     "license": "MIT",
@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Profvigaeff\\AsyncSocketServer\\": "src/"
+            "BV\\ROoHP\\": "src/"
         }
     },
     "support": {
