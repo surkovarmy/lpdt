@@ -1,0 +1,34 @@
+{
+    "name": "gbublik/supervisor",
+    "description": "Create socket server on nonblock mode",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "gbublik",
+            "email": "gbublik@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^5.4",
+        "ext-sockets": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0.8 || ^5.7.15"
+    },
+    "autoload": {
+        "psr-4": {
+            "GBublik\\Supervisor\\": "src/"
+        }
+    },
+    "support": {
+        "issues": "https://github.com/gbublik/supervisor/issues",
+        "source": "https://github.com/gbublik/supervisor"
+    },
+    "scripts": {
+        "check": [
+            "@test"
+        ],
+        "test": "phpunit --colors=always"
+    }
+}
