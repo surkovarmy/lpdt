@@ -1,5 +1,5 @@
 {
-    "name": "bv/roohp",
+    "name": "gbublik/supervisor",
     "description": "Create socket server on nonblock mode",
     "type": "library",
     "license": "MIT",
@@ -18,12 +18,12 @@
     },
     "autoload": {
         "psr-4": {
-            "BV\\ROoHP\\": "src/"
+            "GBublik\\Supervisor\\": "src/"
         }
     },
     "support": {
-        "issues": "https://github.com/gbublik/roohp/issues",
-        "source": "https://github.com/gbublik/roohp"
+        "issues": "https://github.com/gbublik/supervisor/issues",
+        "source": "https://github.com/gbublik/supervisor"
     },
     "scripts": {
         "check": [
