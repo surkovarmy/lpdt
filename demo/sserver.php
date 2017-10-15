@@ -1,5 +1,5 @@
 <?php
-include 'tcp/src/AsyncSocketServer.php.php';
+require_once __DIR__ .'/../../../autoload.php';
 
 /*
 $i = 0;

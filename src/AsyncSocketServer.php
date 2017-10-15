@@ -1,6 +1,6 @@
 <?php
 
-namespace BV\ROoHP;
+namespace GBublik\Supervisor;
 
 /**
  * Class object for create noblock socket server
@@ -11,8 +11,8 @@ class AsyncSocketServer
     /** @var resource Socket server */
     protected $socket = null;
 
-    /** @var Client\IClient[] Array of client objects */
-    protected $clients = [];
+    /** @var Agent\AgentInterface[] Array of client objects */
+    protected $agents = [];
 
     /** @var string Socket server name  */
     protected $host = null;
@@ -79,14 +79,12 @@ class AsyncSocketServer
     public function start()
     {
         $this->socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
-        if ($this->socket) {
-            socket_bind($this->socket , $this->getHost(), $this->getPort());
-            socket_listen($this->socket);
-            socket_set_nonblock($this->socket);
-            $this->checkError($this->socket);
+        socket_bind($this->socket , $this->getHost(), $this->getPort());
+        socket_listen($this->socket);
+        socket_set_nonblock($this->socket);
+        $this->checkError($this->socket);
 
-            $this->isRun = true;
-        }
+        $this->isRun = true;
         return $this->isRun();
     }
 

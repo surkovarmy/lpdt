@@ -27,8 +27,10 @@
     },
     "scripts": {
         "check": [
-            "@test"
+            "@test",
+            "@monitor"
         ],
+        "monitor": "php demo/sclient.php",
         "test": "phpunit --colors=always"
     }
 }
