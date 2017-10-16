@@ -2,6 +2,8 @@
 
 namespace GBublik\Supervisor;
 
+use GBublik\Supervisor\Agent\AgentFacroty;
+
 /**
  * Class object for create noblock socket server
  * @package BV\ROoHP
@@ -82,7 +84,7 @@ class AsyncSocketServer
         socket_bind($this->socket , $this->getHost(), $this->getPort());
         socket_listen($this->socket);
         socket_set_nonblock($this->socket);
-        $this->checkError($this->socket);
+        $this->createFatalErrorBySocket($this->socket);
 
         $this->isRun = true;
         return $this->isRun();
@@ -91,8 +93,7 @@ class AsyncSocketServer
     public function stop()
     {
         if ($this->isRun) {
-            socket_shutdown($this->socket);
-            $this->checkError($this->socket);
+            socket_close($this->socket);
             $this->isRun = false;
         }
         return true;
@@ -107,17 +108,58 @@ class AsyncSocketServer
         return $this->isRun;
     }
 
+    public function listnerNewConnections()
+    {
+        if ( $conn = socket_accept($this->socket)) {
+            if ($error = $this->getSocketError($conn)) {
+                //Todo тут должна быть рассылка которой еще нет
+            } else {
+                $this->subscribe($conn);
+            }
+        }
+    }
+
+    /**
+     * @return Agent\AgentInterface[]
+     */
+    public function getAgents()
+    {
+        return $this->agents;
+    }
+
+    public function write($str, $types = [])
+    {
+        foreach ($this->getAgents() as $agent) {
+            if (empty($types) || in_array($agent->getType(), $types))
+                $agent->write($str);
+        }
+    }
+
+    protected function subscribe(&$socket) {
+        if ($agent = AgentFacroty::create($socket)) {
+            $this->agents[] = &$agent;
+        }
+    }
+
     protected function checkDependency()
     {
         if(!extension_loaded('sockets')) {
-            throw new Exception('extension sockets is not installed');
+            throw new Exception('Extension sockets is not installed');
         }
         return $this;
     }
 
-    protected function checkError(&$socket)
+    protected function getSocketError(&$socket)
     {
         $error = socket_last_error($socket);
-        if ($error > 0) throw new \Exception(socket_strerror($error));
+        if ($error > 0) return socket_strerror($error);
+        return null;
+    }
+
+    protected function createFatalErrorBySocket(&$socket)
+    {
+       if ($error = $this->getSocketError($socket)) {
+           throw new \Exception($error);
+       }
     }
 }
