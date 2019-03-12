@@ -1,1 +1,1 @@
-# Supervisor for PHP application
+# Long proccess debug tool
