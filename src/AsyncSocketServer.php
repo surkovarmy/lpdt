@@ -1,6 +1,6 @@
 <?php
 
-namespace GBublik\Lpdp;
+namespace GBublik\Lpdt;
 
 use GBublik\Lpdp\Agent\AgentFacroty;
 
