@@ -1,8 +1,8 @@
 <?php
 
-namespace GBublik\Supervisor;
+namespace GBublik\Lpdp;
 
-use GBublik\Supervisor\Agent\AgentFacroty;
+use GBublik\Lpdp\Agent\AgentFacroty;
 
 /**
  * Class object for create noblock socket server

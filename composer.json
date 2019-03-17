@@ -1,6 +1,6 @@
 {
-    "name": "gbublik/supervisor",
-    "description": "Create socket server on nonblock mode",
+    "name": "gbublik/lpdt",
+    "description": "Long process debug tool",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -10,7 +10,6 @@
         }
     ],
     "require": {
-        "php": "^5.4",
         "ext-sockets": "*"
     },
     "require-dev": {
@@ -22,15 +21,7 @@
         }
     },
     "support": {
-        "issues": "https://github.com/gbublik/supervisor/issues",
-        "source": "https://github.com/gbublik/supervisor"
-    },
-    "scripts": {
-        "check": [
-            "@test",
-            "@monitor"
-        ],
-        "monitor": "php demo/sclient.php",
-        "test": "phpunit"
+        "issues": "https://github.com/gbublik/lpdt/issues",
+        "source": "https://github.com/gbublik/lpdt"
     }
 }

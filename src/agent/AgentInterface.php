@@ -1,6 +1,6 @@
 <?php
 
-namespace GBublik\Supervisor\Agent;
+namespace GBublik\Lpdp\Agent;
 
 interface AgentInterface
 {

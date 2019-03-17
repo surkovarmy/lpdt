@@ -1,5 +1,5 @@
 <?php
-namespace GBublik\Supervisor\Agent;
+namespace GBublik\Lpdp\Agent;
 
 class WebsocketAgent implements AgentInterface
 {

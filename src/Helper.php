@@ -1,5 +1,5 @@
 <?php
-namespace GBublik\Supervisor;
+namespace GBublik\Lpdp;
 
 class Helper
 {
