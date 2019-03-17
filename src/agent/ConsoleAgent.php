@@ -1,7 +1,7 @@
 <?php
-namespace GBublik\Lpdp\Agent;
+namespace GBublik\Lpdt\Agent;
 
-class ConsoleAgent implements AgentInterface
+class ConsoleAgent extends AgentBase
 {
     protected $socket = null;
 

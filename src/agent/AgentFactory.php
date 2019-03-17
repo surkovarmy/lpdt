@@ -1,18 +1,17 @@
 <?php
 
-namespace GBublik\Lpdp\Agent;
+namespace GBublik\Lpdt\Agent;
 
-use GBublik\Supervisor\Config;
-use GBublik\Supervisor\Helper;
+use GBublik\Lpdt\Helper;
 
-class AgentFacroty
+class AgentFactory
 {
     static public function create(&$socket)
     {
         $opt = Helper::parseHeader(Helper::readSocket($socket));
 
         switch ($opt['upgrade']) {
-            case 'SupervisorClient':
+            case 'Console':
                 $agent = new ConsoleAgent($socket, $opt);
                 break;
             case 'Websocket':

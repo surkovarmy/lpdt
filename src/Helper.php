@@ -1,5 +1,5 @@
 <?php
-namespace GBublik\Lpdp;
+namespace GBublik\Lpdt;
 
 class Helper
 {

@@ -1,7 +1,7 @@
 <?php
-namespace GBublik\Lpdp\Agent;
+namespace GBublik\Lpdt\Agent;
 
-class WebsocketAgent implements AgentInterface
+class WebsocketAgent extends AgentBase
 {
 
 }
