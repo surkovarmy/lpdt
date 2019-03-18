@@ -2,4 +2,4 @@
 
 ### INSTALL
 
-`composer require gbublik/lpdt`
+`composer require gbublik/lpdt:dev-master`
