@@ -1,5 +1,5 @@
 # Long proccess debug tool
 
-###INSTALL
+### INSTALL
 
 `composer require gbublik/lpdt`
