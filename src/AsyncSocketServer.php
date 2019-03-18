@@ -11,6 +11,8 @@ use GBublik\Lpdt\Agent\AgentFactory;
  */
 class AsyncSocketServer
 {
+    const MESSAGE_4_NEW_CONNECTION = 'Welcome to long process debug tool';
+
     /** @var resource Socket server */
     protected $socket = null;
 
@@ -105,8 +107,8 @@ class AsyncSocketServer
         $this->createFatalErrorBySocket($this->socket);
 
         $this->isRun = true;
-        fwrite($this->console, "Сервер запущен\n");
-        return $this->isRun();
+        fwrite($this->console, "Run server\n");
+        return self::$instance;
     }
 
     public function stop()
@@ -114,10 +116,10 @@ class AsyncSocketServer
         if ($this->isRun) {
             socket_close($this->socket);
             $this->isRun = false;
-            fwrite($this->console, "Сервер остановлен\n");
+            fwrite($this->console, "Stop server\n");
         }
         fclose($this->console);
-        return true;
+        return self::$instance;
     }
 
     /**
@@ -135,7 +137,7 @@ class AsyncSocketServer
             if ($error = $this->getSocketError($conn)) {
                 //Todo тут должна быть рассылка которой еще нет
             } else {
-                fwrite($this->console, "Подключился новый клиент\n");
+                fwrite($this->console, "New connection\n");
                 $this->subscribe($conn);
             }
         }
@@ -165,6 +167,7 @@ class AsyncSocketServer
 
     protected function subscribe(&$socket) {
         if ($agent = AgentFactory::create($socket)) {
+            $agent->write(self::MESSAGE_4_NEW_CONNECTION);
             $this->agents[] = &$agent;
         }
     }
