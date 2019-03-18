@@ -7,7 +7,7 @@ if (!$fp) {
 } else {
     fwrite($fp, "upgrade: Console");
     while (!feof($fp)) {
-        echo fgets($fp, 1024);
+        fwrite($console, fgets($fp, 1024));
     }
     fclose($fp);
 }
