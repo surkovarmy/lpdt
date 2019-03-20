@@ -4,6 +4,7 @@ namespace GBublik\Lpdt;
 
 use GBublik\Lpdt\Agent;
 use GBublik\Lpdt\Agent\AgentFactory;
+use GBublik\Lpdt\General\AsyncSocketServerException;
 
 /**
  * Class object for create noblock socket server
