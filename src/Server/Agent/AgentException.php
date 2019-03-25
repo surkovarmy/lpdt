@@ -1,5 +1,5 @@
 <?php
-namespace GBublik\Lpdt\Agent;
+namespace GBublik\Lpdt\Server\Agent;
 
 class AgentException extends \Exception {
 

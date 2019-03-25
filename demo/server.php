@@ -1,8 +1,7 @@
 <?php
 require __DIR__ . '/../../../../vendor/autoload.php';
 
-$s = GBublik\Lpdt\AsyncSocketServer::getInstance();
-$s->start();
+$s = GBublik\Lpdt\Server\AsyncSocketServer::getInstance()->start();
 
 $i = 0;
 while (1){

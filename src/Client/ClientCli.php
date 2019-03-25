@@ -9,18 +9,28 @@
 namespace GBublik\Lpdt\Client;
 
 
-class ClientConsole extends ClientBase
+class ClientCli extends ClientBase
 {
+    /**
+     * @var bool|resource
+     */
     public $console;
 
+    /**
+     * ClientCli constructor.
+     */
     public function __construct()
     {
         $this->console = fopen('php://stdout', 'w');
     }
 
+    /**
+     * @param $socket
+     * @param int $length
+     */
     public function getData( $socket ,int $length)
     {
-        fwrite($socket->socket, "upgrade: Console");
+        fwrite($socket->socket, "Upgrade: Cli");
         while (!feof($socket->socket)) {
             fwrite($this->console, fgets($socket->socket, $length));
         }
